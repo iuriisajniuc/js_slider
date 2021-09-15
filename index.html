@@ -7,30 +7,34 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
 </head>
 
 <body>
-  <ul id="slides" class="slides">
-    <li class="slide active">Slide 1</li>
-    <li class="slide">Slide 2</li>
-    <li class="slide">Slide 3</li>
-    <li class="slide">Slide 4</li>
-    <li class="slide">Slide 5</li>
-  </ul>
+  <div id="carousel" class="carousel">
+    <ul id="slides" class="slides">
+      <li class="slide active">Slide 1</li>
+      <li class="slide">Slide 2</li>
+      <li class="slide">Slide 3</li>
+      <li class="slide">Slide 4</li>
+      <li class="slide">Slide 5</li>
+    </ul>
 
-  <div class="btn">
-    <span class="controls" id="prev">Prev</span>
-    <span class="controls" id="pause">Pause</span>
-    <span class="controls" id="next">Next</span>
-  </div>
+    <div class="btn">
+      <span class="controls" id="prev"><i class="far fa-angle-left"></i></span>
+      <span class="controls" id="pause"><i class="far fa-pause-circle"></i></span>
+      <span class="controls" id="next"><i class="far fa-angle-right"></i></span>
+
+    </div>
 
 
-  <div id="indicators" class="indicators">
-    <div id="0" class="indicator active"></div>
-    <div id="1" class="indicator"></div>
-    <div id="2" class="indicator"></div>
-    <div id="3" class="indicator"></div>
-    <div id="4" class="indicator"></div>
+    <div id="indicators" class="indicators">
+      <div id="0" class="indicator active"></div>
+      <div id="1" class="indicator"></div>
+      <div id="2" class="indicator"></div>
+      <div id="3" class="indicator"></div>
+      <div id="4" class="indicator"></div>
+    </div>
   </div>
 
   <script src="./assets/js/main.js"></script>

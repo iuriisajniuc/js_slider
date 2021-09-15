@@ -104,3 +104,8 @@ just for appearance; change whatever you want
 .indicator.active {
   background-color: black;
 }
+
+i {
+  font-family: "FontAwesome";
+  font-style: normal;
+}
