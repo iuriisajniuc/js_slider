@@ -92,7 +92,6 @@ just for appearance; change whatever you want
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  display: none;
 }
 
 .indicator {
