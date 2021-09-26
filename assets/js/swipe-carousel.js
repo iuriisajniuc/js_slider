@@ -1,3 +1,4 @@
+import Carousel from "./carousel.js";
 class SwipeCarousel extends Carousel {
   _swipeStart(e) {
     this.swipeStartX = e.changedTouches[0].pageX;
@@ -15,3 +16,5 @@ class SwipeCarousel extends Carousel {
     this.container.addEventListener("touchend", this._swipeEnd.bind(this));
   }
 }
+
+export default SwipeCarousel;

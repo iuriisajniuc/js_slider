@@ -72,11 +72,14 @@ class Carousel {
   }
 
   _initListeners() {
+    document.addEventListener("keydown", this._pressKey.bind(this));
+
     this.nextBtn.addEventListener("click", this.next.bind(this));
     this.prevBtn.addEventListener("click", this.prev.bind(this));
     this.pauseBtn.addEventListener("click", this.pausePlay.bind(this));
     this.indContainer.addEventListener("click", this._indicate.bind(this));
-    document.addEventListener("keydown", this._pressKey.bind(this));
+    this.container.addEventListener("mouseenter", this._pause.bind(this));
+    this.container.addEventListener("mouseleave", this._play.bind(this));
   }
 
   _goToSlide(n) {
@@ -98,9 +101,11 @@ class Carousel {
   }
 
   _play() {
-    this.pauseBtn.innerHTML = this.FA_PAUSE;
-    this.isPlaying = true;
-    this.timerID = setInterval(this._goToNext.bind(this), this.interval);
+    if (!this.isPlaying) {
+      this.pauseBtn.innerHTML = this.FA_PAUSE;
+      this.isPlaying = true;
+      this.timerID = setInterval(this._goToNext.bind(this), this.interval);
+    }
   }
 
   _indicate(e) {
@@ -141,3 +146,5 @@ class Carousel {
       this.timerID = setInterval(this._goToNext.bind(this), this.interval);
   }
 }
+
+export default Carousel;
