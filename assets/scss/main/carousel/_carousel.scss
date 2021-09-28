@@ -1,6 +1,6 @@
 .main {
   position: absolute;
-  top: calc((100% - 75vh) / 2);
+  top: calc((100% - 75vh - 8px) / 2);
 
   @include md-sm {
     top: calc((100% - 50vh) / 2);

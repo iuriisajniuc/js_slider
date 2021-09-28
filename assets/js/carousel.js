@@ -9,7 +9,6 @@ class Carousel {
       },
       ...params,
     };
-    console.log(settings);
 
     this.container = document.querySelector(settings.containerID);
     this.slides = this.container.querySelectorAll(settings.slideID);

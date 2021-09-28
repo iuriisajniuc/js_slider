@@ -49,7 +49,7 @@ i {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-rows: 85px;
+  grid-template-rows: 75px;
   margin-bottom: 0;
 }
 
@@ -144,8 +144,8 @@ i {
 
 .main {
   position: absolute;
-  top: -webkit-calc((100% - 75vh) / 2);
-  top: calc((100% - 75vh) / 2);
+  top: -webkit-calc((100% - 75vh - 8px) / 2);
+  top: calc((100% - 75vh - 8px) / 2);
   right: 0;
   left: 0;
 }
