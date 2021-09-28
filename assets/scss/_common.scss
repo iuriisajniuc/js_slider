@@ -3,6 +3,9 @@
 }
 
 html {
+  position: relative;
+  height: 100vh;
+  width: 100%;
   font-size: $font-size;
 }
 
@@ -18,7 +21,9 @@ a {
   color: $color-light;
 }
 .container {
-  max-width: $xl;
+  @include lg-min {
+    max-width: 80%;
+  }
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;

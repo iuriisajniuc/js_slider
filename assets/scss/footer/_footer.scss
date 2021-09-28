@@ -1,10 +1,12 @@
 .footer {
-  position: relative;
+  position: absolute;
   display: grid;
   justify-content: center;
-
   color: $color-gray;
-  height: 100px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 85px;
   @include sm {
     min-height: 50px;
   }
