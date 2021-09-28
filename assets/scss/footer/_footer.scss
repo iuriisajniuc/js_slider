@@ -1,5 +1,8 @@
 .footer {
   position: relative;
+  display: grid;
+  justify-content: center;
+
   color: $color-gray;
   min-height: 100px;
   @include sm {
