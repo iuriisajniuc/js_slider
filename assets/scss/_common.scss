@@ -1,1 +1,30 @@
+* {
+  box-sizing: border-box;
+}
 
+html {
+  font-size: $font-size;
+}
+
+body {
+  margin: 0;
+  background-color: $color-dark;
+}
+
+a {
+  transition: color 0.5s;
+  text-decoration: none;
+
+  color: $color-light;
+}
+.container {
+  max-width: $xl;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+i {
+  font-family: "FontAwesome";
+  font-style: normal;
+}

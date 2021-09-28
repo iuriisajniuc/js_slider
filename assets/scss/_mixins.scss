@@ -1,0 +1,219 @@
+/* xl */
+@mixin xl-min {
+  @media (min-width: $xl) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (max-width: $xl - 0.2) {
+    @content;
+  }
+}
+
+@mixin xl-lg {
+  @media (max-width: $xl - 0.2) and (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin xl-md {
+  @media (max-width: $xl - 0.2) and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin xl-sm {
+  @media (max-width: $xl - 0.2) and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin xl-xs {
+  @media (max-width: $xl - 0.2) and (min-width: $xs) {
+    @content;
+  }
+}
+
+/* lg */
+@mixin lg-min {
+  @media (min-width: $lg) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (max-width: $lg - 0.2) {
+    @content;
+  }
+}
+
+@mixin lg-md {
+  @media (max-width: $lg - 0.2) and (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin lg-sm {
+  @media (max-width: $lg - 0.2) and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin lg-xs {
+  @media (max-width: $lg - 0.2) and (min-width: $xs) {
+    @content;
+  }
+}
+
+/* md */
+@mixin md-min {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (max-width: $md - 0.2) {
+    @content;
+  }
+}
+
+@mixin md-sm {
+  @media (max-width: $md - 0.2) and (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin md-xs {
+  @media (max-width: $md - 0.2) and (min-width: $xs) {
+    @content;
+  }
+}
+
+/* sm */
+@mixin sm-min {
+  @media (min-width: $sm) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: $sm - 0.2) {
+    @content;
+  }
+}
+
+@mixin sm-xs {
+  @media (max-width: $sm - 0.2) and (min-width: $xs) {
+    @content;
+  }
+}
+
+/* xs */
+@mixin xs-min {
+  @media (min-width: $xs) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (max-width: $xs - 0.2) {
+    @content;
+  }
+}
+
+// Reset margin, padding and list-style from a list.
+
+@mixin unlist($m: 0, $p: 0) {
+  margin: $m;
+  padding: $p;
+
+  list-style: none;
+}
+
+// Single-line text with a three-dot at the end
+
+@mixin text-shorten {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Multiline text with a triple-dot at the end
+
+@mixin block-shorten($fz: 1rem, $lh: 1.5, $h: 70px, $l: 3) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+
+  height: $h;
+
+  font-size: $fz;
+  line-height: $fz * $lh;
+
+  -webkit-line-clamp: $l;
+}
+
+// The first parameter - color, the second - transparency
+// One parameter - black with the specified transparency
+
+@mixin bg-color($a: 0, $rgb: 0) {
+  background: rgba($rgb, $rgb, $rgb, $a);
+}
+
+// Turn off the ability to select an item
+
+@mixin unselectable {
+  user-select: none;
+
+  -webkit-touch-callout: none;
+}
+
+// Background image, for the whole block
+// @include bg-image("image.jpg");
+// @include bg-image("image.jpg", #ff00ff, "fixed");
+
+@mixin bg-image($img, $bgc: gray, $fixed: "none") {
+  background-color: $bgc;
+  background-image: url($img);
+  background-position: top center;
+  background-size: cover;
+  @if $fixed == "fixed" {
+    background-attachment: fixed;
+  }
+}
+
+@mixin block-header($mb: 10px) {
+  margin-top: 0;
+  margin-bottom: $mb;
+
+  border-bottom: 1px solid $color-dark;
+}
+
+// Visually hidden element
+
+@mixin visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+}
+
+// Absolute positioning
+
+@mixin abs-position($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

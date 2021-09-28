@@ -1,0 +1,24 @@
+.indicators {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  padding: 1em;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 2;
+}
+
+.indicator {
+  width: 20px;
+  height: 10px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+
+  &.active {
+    background-color: $color-gray-dark;
+  }
+}

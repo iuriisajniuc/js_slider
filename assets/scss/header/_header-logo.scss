@@ -1,0 +1,17 @@
+.header-logo {
+  display: flex;
+  align-items: center;
+  @include sm {
+    justify-content: center;
+  }
+  &__image {
+    display: block;
+    max-width: 200px;
+    margin-right: 20px;
+
+    @include sm {
+      margin: 0;
+      max-width: 150px;
+    }
+  }
+}

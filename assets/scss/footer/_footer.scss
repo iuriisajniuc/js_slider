@@ -1,0 +1,40 @@
+.footer {
+  position: relative;
+  color: $color-gray;
+  min-height: 100px;
+  @include sm {
+    min-height: 50px;
+  }
+
+  &::before {
+    position: absolute;
+    border-top: 2px solid $color-gray;
+    content: "";
+    width: 100%;
+  }
+
+  &__contacts {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
+  &__icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    & a {
+      text-decoration: none;
+      font-size: 2rem;
+      padding: 10px;
+      transition: 0.5s;
+      color: $color-gray;
+
+      &:hover,
+      &:focus {
+        color: $color-light;
+      }
+    }
+  }
+}

@@ -1,22 +1,147 @@
-/*
-essential styles:
-these make the slideshow work
-*/
+/* xl */
+/* lg */
+/* md */
+/* sm */
+/* xs */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
+  background-color: #0d0c09;
+}
+
+a {
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+i {
+  font-family: "FontAwesome";
+  font-style: normal;
+}
+
+.header {
+  background-color: #15161b;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.header-menu {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 60px;
+  margin-bottom: 0;
+}
+
+.header-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header-logo__image {
+  display: block;
+  max-width: 200px;
+  margin-right: 20px;
+}
+
+.header-navbar {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 0;
+}
+.header-navbar__list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header-navbar__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 17px;
+  height: 100%;
+}
+.header-navbar__item:hover {
+  background: #e10600;
+}
+.header-navbar__item:hover .header-navbar__link::after {
+  left: 0;
+  width: 100%;
+}
+.header-navbar__link {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  letter-spacing: 0.03em;
+  font-size: 1.375rem;
+  font-weight: bold;
+}
+.header-navbar__link::after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  content: "";
+  -webkit-transition: width 0.5s, left 0.5s;
+  -o-transition: width 0.5s, left 0.5s;
+  transition: width 0.5s, left 0.5s;
+  border-bottom: 4px solid #ffffff;
+}
+
+.main {
+  margin: 20px 0;
 }
 
 .slides {
   position: relative;
-  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 75vh;
+  width: 75%;
   padding: 0px;
-  margin: 0px;
   list-style-type: none;
+  border-radius: 17px;
+  overflow: hidden;
 }
 
 .slide {
@@ -30,11 +155,8 @@ body {
   -webkit-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
-  font-size: 40px;
-  padding: 40px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #fff;
 }
 
 .active {
@@ -46,65 +168,245 @@ body {
 non-essential styles:
 just for appearance; change whatever you want
 */
+.slide:nth-of-type(5), .slide:nth-of-type(4), .slide:nth-of-type(3), .slide:nth-of-type(2), .slide:nth-of-type(1) {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
 .slide:nth-of-type(1) {
-  background: red;
+  background: url(../img/Ferrari\ Might\ Go\ Back\ To\ The\ Drawing\ Board\ With\ 2019\ F1\ Car\ _\ Carscoops.jfif);
 }
 
 .slide:nth-of-type(2) {
-  background: orange;
+  background: url(../img/slide2new.jfif);
 }
 
 .slide:nth-of-type(3) {
-  background: green;
+  background: url(../img/slide3.jfif);
 }
 
 .slide:nth-of-type(4) {
-  background: blue;
+  background: url(../img/slide4new.png);
 }
 
 .slide:nth-of-type(5) {
-  background: purple;
+  background: url(../img/1594574372910.jpg);
 }
 
-.btn,
-.indicators {
+.control {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: rgba(255, 255, 255, 0.2);
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.control:hover, .control:focus {
+  color: #313841;
+  opacity: 70%;
+}
+.control span {
+  position: absolute;
+  display: block;
+  -webkit-transform: translate(50%, 50%);
+      -ms-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  opacity: 0;
+}
+
+.prev {
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  padding-left: 10px;
+  font-size: 5rem;
+}
+
+.next {
+  top: 50%;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  padding-right: 10px;
+  font-size: 5rem;
+}
+
+.pause-play {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1em;
-  padding: 1em;
-  float: left;
-}
-
-.controls {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 5px;
-  width: 70px;
-  height: 30px;
+  top: -webkit-calc(50% - 10vh);
+  top: calc(50% - 10vh);
+  left: -webkit-calc(50% - 10vh);
+  left: calc(50% - 10vh);
+  color: transparent;
+  -webkit-transition: 2s;
+  -o-transition: 2s;
+  transition: 2s;
+  font-size: 20vh;
+}
+
+.indicators {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  padding: 1em;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 2;
+}
+
+.indicator {
+  width: 20px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  background-color: #90909090;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-}
-
-.indicator {
-  width: 30px;
-  height: 30px;
-  background-color: #90909090;
-  cursor: pointer;
+  border-radius: 10px;
 }
 .indicator.active {
-  background-color: black;
+  background-color: #313841;
 }
 
-i {
-  font-family: "FontAwesome";
-  font-style: normal;
+.footer {
+  position: relative;
+  color: #555555;
+  min-height: 100px;
+}
+.footer::before {
+  position: absolute;
+  border-top: 2px solid #555555;
+  content: "";
+  width: 100%;
+}
+.footer__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 10px;
+}
+.footer__icons {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.footer__icons a {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 10px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  color: #555555;
+}
+.footer__icons a:hover, .footer__icons a:focus {
+  color: #ffffff;
+}
+
+/*
+essential styles:
+these make the slideshow work
+*/
+
+@media (min-width: 576px) {
+  .header-navbar__item:last-child {
+    padding-right: 5px;
+    margin-right: 0;
+  }
+  .header-navbar__link:last-child {
+    padding-right: 5px;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767.8px) {
+  .header-navbar__link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767.8px) and (min-width: 576px) {
+  .header-navbar__item {
+    padding: 0 10px;
+  }
+  .main {
+    margin: 115px 0;
+  }
+  .slides {
+    height: 50vh;
+    width: 80%;
+  }
+}
+
+@media (max-width: 575.8px) {
+  .header-menu {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40px 40px;
+  }
+  .header-logo {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-logo__image {
+    margin: 0;
+    max-width: 150px;
+  }
+  .header-navbar {
+    padding: 0 5px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header-navbar__item {
+    padding: 0 20px;
+  }
+  .main {
+    margin: 140px 0;
+  }
+  .slides {
+    height: 40vh;
+    width: 90%;
+  }
+  .pause-play {
+    top: -webkit-calc(50% - 7.5vh);
+    top: calc(50% - 7.5vh);
+    left: -webkit-calc(50% - 7.5vh);
+    left: calc(50% - 7.5vh);
+    font-size: 15vh;
+  }
+  .footer {
+    min-height: 50px;
+  }
 }
