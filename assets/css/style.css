@@ -165,8 +165,6 @@ i {
   padding: 0px;
   margin: 0px;
   list-style-type: none;
-  border-radius: 17px;
-  overflow: hidden;
 }
 
 .slide {
@@ -182,6 +180,7 @@ i {
   transition: opacity 1s;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-radius: 17px;
 }
 
 .active {
